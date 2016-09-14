@@ -28,10 +28,6 @@
   [number]
   (inc number))
 
-(defn custom-sum
-  "Increments a list of numbers"
-  [& numbers]
-  (map sum-numbers numbers))
 
 (defn introduce-yourself
  "Returns a person and list of languages"
@@ -45,3 +41,12 @@
   "Returns a first value"
     [[first]] first)
 
+
+;; Testing loops
+(defn loop-into-vector
+  " Testing loops"
+  [some-vector]
+  (loop [[first & last] some-vector]
+    (if-not (nil? first)
+    (do (println (* first 10))
+    (recur last)))))
